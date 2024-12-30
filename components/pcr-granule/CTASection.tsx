@@ -58,7 +58,7 @@ const CTASection = () => {
         ))}
       </motion.div>
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl font-bold mb-6 text-center">Let's Collaborate on Sustainable Solutions!</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">Lets Collaborate on Sustainable Solutions!</h2>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
           <Input
             name="fullName"

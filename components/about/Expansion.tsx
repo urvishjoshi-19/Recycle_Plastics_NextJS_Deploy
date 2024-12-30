@@ -42,13 +42,13 @@ const Expansion = () => {
     <section className="py-12 bg-gradient-to-b from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-4 text-center">Expanding Horizons</h2>
-        <p className="text-xl mb-12 text-center">Taking Recycle Plastics's Vision Nationwide and Beyond</p>
+        <p className="text-xl mb-12 text-center">Taking Recycle Plastics&apos;s Vision Nationwide and Beyond</p>
 
         <div className="relative mb-12">
           {/* Timeline bar */}
           <div className="absolute left-0 right-0 h-2 bg-blue-300 dark:bg-blue-700 top-1/2 transform -translate-y-1/2"></div>
           <div className="flex justify-between relative">
-            {expansionData.map((data, index) => (
+            {expansionData.map((data) => (
               <motion.div
                 key={data.year}
                 className={`w-10 h-10 rounded-full ${activeYear === data.year ? 'bg-primary' : 'bg-blue-300 dark:bg-blue-700'} cursor-pointer relative`}

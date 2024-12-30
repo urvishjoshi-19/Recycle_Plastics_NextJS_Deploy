@@ -59,7 +59,7 @@ export default function ExhibitionsSection() {
     <section className="mb-16">
       <h2 className="mb-4 text-3xl font-bold text-center text-secondary">Exhibitions and Awards</h2>
       <p className="mb-8 text-lg text-muted-foreground text-center max-w-2xl mx-auto">
-        Explore our participation in key industry exhibitions and the recognition we've received for our commitment to sustainability and innovation.
+        Explore our participation in key industry exhibitions and the recognition we have received for our commitment to sustainability and innovation.
       </p>
       <div className="relative mb-12">
         <Card className="overflow-hidden bg-card">

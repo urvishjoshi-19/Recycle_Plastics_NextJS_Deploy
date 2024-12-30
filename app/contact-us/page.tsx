@@ -16,7 +16,7 @@ export default function ContactUsPage() {
       <main className="flex-grow relative overflow-hidden">
         <BackgroundAnimation />
         <div className="container mx-auto px-4 py-8 relative z-10">
-          <h1 className="text-4xl font-bold text-center mb-8 text-primary">We'd Love to Hear from You!</h1>
+          <h1 className="text-4xl font-bold text-center mb-8 text-primary">We&apos;d Love to Hear from You!</h1>
           <ContactForm />
         </div>
       </main>

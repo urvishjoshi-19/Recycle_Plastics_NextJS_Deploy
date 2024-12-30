@@ -6,6 +6,20 @@ import { Bot, X, Send, Leaf, Mic } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
+// Add type declarations for the Web Speech API
+declare global {
+  interface Window {
+    webkitSpeechRecognition: new () => SpeechRecognition;
+  }
+  interface SpeechRecognition extends EventTarget {
+    start: () => void;
+    stop: () => void;
+    onstart: (event: Event) => void;
+    onend: (event: Event) => void;
+    onresult: (event: { results: { transcript: string }[][] }) => void;
+  }
+}
+
 const quickActions = [
   { label: "What is Recykal?", action: "what_is_recykal" },
   { label: "How can I recycle plastic?", action: "recycle_plastic" },
@@ -78,28 +92,29 @@ const EcoAI = () => {
   }
 
   const handleVoiceInput = () => {
-    console.log('Voice input triggered')
+    console.log('Voice input triggered');
     if ('webkitSpeechRecognition' in window) {
-      const recognition = new (window as any).webkitSpeechRecognition()
+      const recognition = new window.webkitSpeechRecognition();
       recognition.onstart = () => {
-        console.log('Voice recognition started')
-        setIsListening(true)
-      }
+        console.log('Voice recognition started');
+        setIsListening(true);
+      };
       recognition.onend = () => {
-        console.log('Voice recognition ended')
-        setIsListening(false)
-      }
-      recognition.onresult = (event: any) => {
-        const transcript = event.results[0][0].transcript
-        console.log('Voice recognition result:', transcript)
-        setInput(transcript)
-      }
-      recognition.start()
+        console.log('Voice recognition ended');
+        setIsListening(false);
+      };
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('Voice recognition result:', transcript);
+        setInput(transcript);
+      };
+      recognition.start();
     } else {
-      console.warn('Voice recognition not supported in this browser')
-      alert('Voice recognition is not supported in your browser.')
+      console.warn('Voice recognition not supported in this browser');
+      alert('Voice recognition is not supported in your browser.');
     }
-  }
+  };
+  
 
   return (
     <>
@@ -141,7 +156,7 @@ const EcoAI = () => {
           >
             <div className="bg-gradient-to-r from-green-600 to-blue-600 p-4 text-white font-bold flex items-center">
               <Bot size={24} className="mr-2" />
-              <span>EcoAI - Powered by OpenAI's ChatGPT 4</span>
+              <span>EcoAI - Powered by OpenAI ChatGPT 4</span>
             </div>
             <div ref={chatRef} className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.map((message, index) => (

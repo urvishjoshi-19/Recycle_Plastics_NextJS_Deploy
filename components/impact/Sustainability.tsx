@@ -17,7 +17,7 @@ const Sustainability = () => {
         </div>
         <div className="w-full md:w-1/2">
           <p className="text-lg mb-4">
-            At Recycle Plastics, we're committed to building a sustainable future through eco-friendly packaging solutions and responsible recycling practices on a global scale. Our initiatives aim to reduce waste, conserve resources, and promote circular economy principles across the world.
+            At Recycle Plastics, we are committed to building a sustainable future through eco-friendly packaging solutions and responsible recycling practices on a global scale. Our initiatives aim to reduce waste, conserve resources, and promote circular economy principles across the world.
           </p>
           <Button>Explore Our Global Sustainability Practices</Button>
         </div>

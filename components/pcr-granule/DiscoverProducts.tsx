@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -150,7 +151,7 @@ const DiscoverProducts = () => {
               >
                 <td className="p-2 border font-semibold">{product.name}</td>
                 <td className="p-2 border">
-                  <img src={product.image} alt={product.name} className="w-16 h-16 object-cover mx-auto" />
+                  <Image src={product.image} fill = {true} alt={product.name} className="w-16 h-16 object-cover mx-auto" />
                 </td>
                 <td className="p-2 border">{product.density}</td>
                 <td className="p-2 border">{product.mfi}</td>

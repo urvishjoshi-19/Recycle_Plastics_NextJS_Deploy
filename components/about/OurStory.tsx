@@ -9,7 +9,7 @@ const OurStory = () => {
           </p>
           <p className="text-center">
             <strong>But how?</strong><br />
-            We started with a 2-year ground research, which we dub as 'MBA in Waste Management,' with the main campus of study being Landfills and Waste Generating entities. With a goal of digitising and bridging the gaps between stakeholders, the team honed their skills and brought their vision to life.
+            We started with a 2-year ground research, which we dub as MBA in Waste Management, with the main campus of study being Landfills and Waste Generating entities. With a goal of digitising and bridging the gaps between stakeholders, the team honed their skills and brought their vision to life.
           </p>
           <p className="text-center">
             <strong>What happened next?</strong><br />

@@ -64,7 +64,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl font-semibold mb-4">Fill in your details, and we'll contact you shortly.</h2>
+            <h2 className="text-2xl font-semibold mb-4">Fill in your details, and we will contact you shortly.</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 name="fullName"

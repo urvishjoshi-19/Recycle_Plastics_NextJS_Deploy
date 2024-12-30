@@ -1,12 +1,10 @@
-const { Configuration, OpenAIApi } = require("openai");
+import OpenAI from "openai";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 // Initialize OpenAI API client
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-const openai = new OpenAIApi(configuration);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log("Request method:", req.method); // Log the request method
@@ -25,9 +23,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         max_tokens: 200,
       });
 
-      console.log("OpenAI API response:", response.data); // Log the full response from OpenAI
+      console.log("OpenAI API response:", response); // Log the full response from OpenAI
 
-      res.status(200).json({ reply: response.data.choices[0].message.content.trim() });
+      const content = response.choices[0]?.message?.content;
+      if (!content) {
+        throw new Error("Invalid response from OpenAI API");
+      }
+
+      res.status(200).json({ reply: content.trim() });
     } catch (error) {
       console.error("OpenAI API error:", error); // Log any errors from OpenAI API
       res.status(500).json({ error: "Failed to fetch response" });
