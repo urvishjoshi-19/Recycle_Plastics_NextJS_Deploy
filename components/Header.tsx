@@ -21,7 +21,7 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about-us' },
-    { name: 'PCR Granules', href: '/pcr-granules' },
+    { name: 'Our Products', href: '/pcr-granules' },
     { name: 'EPR', href: '/epr' },
     { name: 'Achievements', href: '/achievements' },
     { name: 'Impact', href: '/impact' },
