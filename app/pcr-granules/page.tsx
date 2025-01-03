@@ -20,9 +20,11 @@ export default function PCRGranulePage() {
       <main className="flex-grow relative">
         <BackgroundAnimation />
         <div className="container mx-auto px-4 py-8 relative z-10">
+            <OurProducts />
+           <DiscoverProducts />
           <HeroSection />
-          <DiscoverProducts />
-          <OurProducts />
+         
+        
           <LocallySourced />
           <CTASection />
         </div>
